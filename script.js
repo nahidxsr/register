@@ -20,13 +20,21 @@ document.getElementById("registerForm").addEventListener("submit", function (eve
         return;
     }
 
-    let newUser = { name: name, email: email, password: password };
+    let newUser = {
+        name: name,
+        email: email,
+        password: password,
+        balance: 0 // নতুন ইউজারের ব্যালেন্স 0 রাখা হলো
+    };
+
     users.push(newUser);
     localStorage.setItem("users", JSON.stringify(users)); // 🔥 সব ইউজারের ডাটা সেভ করবে
+    localStorage.setItem("loggedInUser", JSON.stringify(newUser)); // 🔥 নতুন ইউজারকে লগইন করা দেখাবে
 
-    alert("✅ রেজিস্ট্রেশন সফল হয়েছে! এখন লগইন করুন।");
-    
+    alert("✅ রেজিস্ট্রেশন সফল হয়েছে! 🎉 আপনি এখন লগইন অবস্থায় আছেন।");
+
+    // ✅ রেজিস্ট্রেশন শেষ হলে সরাসরি ড্যাশবোর্ডে পাঠানো হবে
     setTimeout(() => {
-        window.location.href = "https://nahidxsr.github.io/login/";
+        window.location.href = "https://nahidxsr.github.io/Taka-Gor-BD/";
     }, 3000);
 });
