@@ -24,10 +24,10 @@ document.getElementById("registerForm").addEventListener("submit", function (eve
     users.push(newUser);
     localStorage.setItem("users", JSON.stringify(users));
 
-    // ✅ রেজিস্ট্রেশন সফল হলে ৩ সেকেন্ড পর `login` পেজে যাবে
+    // ✅ রেজিস্ট্রেশন সফল হলে ৩ সেকেন্ড পর সঠিক `login` পেজে যাবে
     alert("✅ রেজিস্ট্রেশন সফল হয়েছে! এখন লগইন করুন।");
-    
+
     setTimeout(() => {
-        window.location.href = "https://nahidxsr.github.io/login/";
+        window.location.replace("https://nahidxsr.github.io/login/");
     }, 3000); // ৩ সেকেন্ড অপেক্ষা করবে তারপর রিডাইরেক্ট করবে
 });
