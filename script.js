@@ -22,12 +22,11 @@ document.getElementById("registerForm").addEventListener("submit", function (eve
 
     let newUser = { name: name, email: email, password: password };
     users.push(newUser);
-    localStorage.setItem("users", JSON.stringify(users));
+    localStorage.setItem("users", JSON.stringify(users)); // 🔥 সব ইউজারের ডাটা সেভ করবে
 
-    // ✅ রেজিস্ট্রেশন সফল হলে ৩ সেকেন্ড পর সঠিক `login` পেজে যাবে
     alert("✅ রেজিস্ট্রেশন সফল হয়েছে! এখন লগইন করুন।");
-
+    
     setTimeout(() => {
-        window.location.replace("https://nahidxsr.github.io/login/");
-    }, 3000); // ৩ সেকেন্ড অপেক্ষা করবে তারপর রিডাইরেক্ট করবে
+        window.location.href = "https://nahidxsr.github.io/login/";
+    }, 3000);
 });
